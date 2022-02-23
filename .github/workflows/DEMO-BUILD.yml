@@ -26,17 +26,17 @@ jobs:
       with:
         java-version: 1.8
         
-    - name: Add repo cerdentials
-      uses: s4u/maven-settings-action@v2.4.0
-      with: 
-        services: |
-          [{
-          "id": "mule-enterprise",
-          "username": "{{MULE_REPO_USER}}",
-          "password": "{{MULE_REPO_PASS}}"
-          }]
-    - name: Print effective-settings (optional)
-    - run: mvn help:effective-settings
+#    - name: Add repo cerdentials
+#      uses: s4u/maven-settings-action@v2.4.0
+#      with: 
+#        services: |
+#          [{
+#          "id": "mule-enterprise",
+#          "username": "{{MULE_REPO_USER}}",
+#          "password": "{{MULE_REPO_PASS}}"
+#          }]
+#    - name: Print effective-settings (optional)
+#    - run: mvn help:effective-settings
     
     - name: Build with Maven
       run: mvn -B package --file pom.xml
